@@ -13,59 +13,100 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);      // make sure your Serial Monitor is also set at this baud rate.
   Dabble.begin(9600);      //Enter baudrate of your bluetooth.Connect bluetooth on Bluetooth port present on evive.
+
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
 }
 
 void loop() {
   Dabble.processInput();             //this function is used to refresh data obtained from smartphone.Hence calling this function is mandatory in order to get data properly from your mobile.
   Serial.print("KeyPressed: ");
+
   if (GamePad.isUpPressed())
   {
-    Serial.print("UP");
+    Serial.print("UP"); // CIMA
+        digitalWrite(4, HIGH); 
+  } else {
+    digitalWrite(4, LOW);
   }
 
   if (GamePad.isDownPressed())
   {
-    Serial.print("DOWN");
+    Serial.print("DOWN"); // BAIXO
+           digitalWrite(6, HIGH); 
+  } else {
+    digitalWrite(6, LOW);
   }
 
   if (GamePad.isLeftPressed())
   {
-    Serial.print("Left");
+    Serial.print("Left"); // ESQUERDA
+           digitalWrite(3, HIGH); 
+  } else {
+    digitalWrite(3, LOW);
   }
-
+  
   if (GamePad.isRightPressed())
   {
-    Serial.print("Right");
+    Serial.print("Right"); // DIREITA
+               digitalWrite(5, HIGH); 
+  } else {
+    digitalWrite(5, LOW);
   }
 
   if (GamePad.isSquarePressed())
   {
-    Serial.print("Square");
+    Serial.print("Square"); // Quadrado
+    digitalWrite(9, HIGH); 
+  } else {
+    digitalWrite(9, LOW);
   }
 
   if (GamePad.isCirclePressed())
   {
-    Serial.print("Circle");
+    Serial.print("Circle"); // CIRCULO
+    digitalWrite(11, HIGH); 
+  } else {
+    digitalWrite(11, LOW);
   }
 
   if (GamePad.isCrossPressed())
   {
-    Serial.print("Cross");
+    Serial.print("Cross"); // BOL
+     digitalWrite(12, HIGH); 
+  } else {
+    digitalWrite(12, LOW);
   }
 
   if (GamePad.isTrianglePressed())
   {
-    Serial.print("Triangle");
+    Serial.print("Triangle"); // TRIANGULO
+     digitalWrite(10, HIGH); 
+  } else {
+    digitalWrite(10, LOW);
   }
 
   if (GamePad.isStartPressed())
   {
-    Serial.print("Start");
+    Serial.print("Start"); // INICIAR
+     digitalWrite(8, HIGH); 
+  } else {
+    digitalWrite(8, LOW);
   }
 
   if (GamePad.isSelectPressed())
   {
-    Serial.print("Select");
+    Serial.print("Select");  // SELECIONAR
+     digitalWrite(7, HIGH); 
+  } else {
+    digitalWrite(7, LOW);
   }
   Serial.print('\t');
 
