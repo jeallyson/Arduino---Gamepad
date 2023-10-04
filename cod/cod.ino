@@ -10,9 +10,9 @@
 #define INCLUDE_GAMEPAD_MODULE
 #include <Dabble.h>
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(115200);      // make sure your Serial Monitor is also set at this baud rate.
-  Dabble.begin(9600);      //Enter baudrate of your bluetooth.Connect bluetooth on Bluetooth port present on evive.
+
+  Serial.begin(115200);      // Monitor Serial
+  Dabble.begin(9600);        // taxa de transmissão do seu bluetooth
 
   pinMode(4, OUTPUT);
   pinMode(5, OUTPUT);
@@ -26,7 +26,7 @@ void setup() {
 }
 
 void loop() {
-  Dabble.processInput();             //this function is used to refresh data obtained from smartphone.Hence calling this function is mandatory in order to get data properly from your mobile.
+  Dabble.processInput();    // //esta função é usada para atualizar os dados obtidos do smartphone. Portanto, chamar esta função é obrigatório para obter os dados corretamente do seu celular.
   Serial.print("KeyPressed: ");
 
   if (GamePad.isUpPressed())
